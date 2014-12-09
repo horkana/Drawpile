@@ -18,7 +18,7 @@ addons:
     project:
       name: horkana/Drawpile
       version: 0.9.6
-      description: Drawpile is a paint program that allows many users to draw at the on the same canvas at the same time.
+      description: A collaborative painting program.
 
     notification_email: alanhorkan+scan_notifications@gmail.com
 
