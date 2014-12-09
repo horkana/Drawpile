@@ -5,6 +5,12 @@ language: cpp
 
 install:
   - sudo apt-get update -yqq
+
+# Travis uses Ubuntu 12.04 
+# need to get packages from PPA
+before_script:
+  - sudo add-apt-repository ppa:karchive/ppa -y
+  - sudo apt-get update -q
   - sudo apt-get install karchive
 
 script:
