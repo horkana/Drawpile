@@ -1,0 +1,28 @@
+# Travis CI, Continous Integration testing http://travis-ci.org/
+# Coverity scan, static code analysis https://scan.coverity.com/travis_ci
+
+language: cpp
+
+install:
+  - sudo apt-get update -yqq
+  - sudo apt-get install karchive
+
+script:
+  - cmake
+# - mkdir build && cd build && make
+
+addons:
+  coverity_scan:
+
+    # GitHub project metadata
+    project:
+      name: horkana/Drawpile
+      version: 0.9.6
+      description: Drawpile is a paint program that allows many users to draw at the on the same canvas at the same time.
+
+    notification_email: alanhorkan+scan_notifications@gmail.com
+
+    build_command_prepend: 
+    build_command: make
+
+    branch_pattern: coverity_scan
