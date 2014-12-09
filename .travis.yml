@@ -5,7 +5,7 @@ language: cpp
 
 install:
   - sudo apt-get update -yqq
-  - sudo add-apt-repository ppa:karchive/ppa -y
+#  - sudo add-apt-repository ppa:karchive/ppa -y
   - apt-get install build-essential qt5-default git cmake kdelibs5-dev karchive
   - apt-get build-dep krita 
 
