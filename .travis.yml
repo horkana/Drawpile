@@ -1,0 +1,32 @@
+# Travis CI, Continous Integration testing http://travis-ci.org/
+# Coverity scan, static code analysis https://scan.coverity.com/travis_ci
+
+language: cpp
+
+before_install: 
+  - sudo apt-get update -yqq
+
+install:
+#  - sudo add-apt-repository ppa:karchive/ppa -y
+  - sudo apt-get install build-essential qt5-default git cmake kdelibs5-dev karchive
+  - sudo apt-get build-dep krita 
+
+script:
+  - cmake
+# - mkdir build && cd build && make
+
+addons:
+  coverity_scan:
+
+    # GitHub project metadata
+    project:
+      name: horkana/Drawpile
+      version: 0.9.6
+      description: A collaborative painting program.
+
+    notification_email: alanhorkan+scan_notifications@gmail.com
+
+    build_command_prepend: 
+    build_command: cmake
+
+    branch_pattern: coverity_scan
