@@ -4,12 +4,11 @@
 language: cpp
 
 before_install: 
-  - sudo apt-get update -yqq
-  # Ubuntu 12.04 does not include Qt5
-  - sudo apt-add-repository ppa:ubuntu-sdk-team/ppa
-  - sudo apt-get update
+  # Ubuntu 12.04 is too old, upgrade needed
+  - sudo apt-get dist-upgrade
 
 install:
+  - sudo apt-get update
   - sudo apt-get install build-essential qt5-default git cmake kdelibs5-dev karchive
   - sudo apt-get build-dep krita 
 
